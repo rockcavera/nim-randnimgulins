@@ -8,6 +8,31 @@
 ##
 ## **It is not cryptographically secure.**
 ##
+## ==========================  ===================  ===============  ========
+##  PRNG                        State size (bits)    Output (bits)    Period
+## ==========================  ===================  ===============  ========
+##  Pcg32                       64                   32               2^64
+##  Pcg32OneSeq                 64                   32               2^64
+##  Pcg32Unique                 64                   32               2^64
+##  Pcg32Fast                   64                   32               2^62
+##  Pcg64                       128                  64               2^128
+##  Pcg64OneSeq                 128                  64               2^128
+##  Pcg64Unique                 128                  64               2^128
+##  Pcg64Fast                   128                  64               2^126
+##  Pcg8OnceInsecure            8                    8                2^8
+##  Pcg16OnceInsecure           16                   16               2^16
+##  Pcg32OnceInsecure           32                   32               2^32
+##  Pcg64OnceInsecure           64                   64               2^64
+##  Pcg128OnceInsecure          128                  128              2^128
+##  Pcg8OneSeqOnceInsecure      8                    8                2^8
+##  Pcg16OneSeqOnceInsecure     16                   16               2^16
+##  Pcg32OneSeqOnceInsecure     32                   32               2^32
+##  Pcg64OneSeqOnceInsecure     64                   64               2^64
+##  Pcg128OneSeqOnceInsecure    128                  128              2^128
+## ==========================  ===================  ===============  ========
+##
+## The Nim code for this implementation was based on this [C++ implementation](https://github.com/imneme/pcg-cpp).
+##
 ## More information: https://www.pcg-random.org/
 ##
 ## ## Notes
