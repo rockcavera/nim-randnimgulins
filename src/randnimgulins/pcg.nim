@@ -49,7 +49,7 @@ import ./private/utils
 {.push overflowChecks: off, warnings: off, raises: [].}
 
 type
-  PcgUInts = SomeUnsignedInt|UInt128
+  PcgUInts = RngUnsignedInt
 
   PcgVariants* = enum
     PcgSingleStream, # OneSeq - all instances use the same fixed constant, thus the RNG always somewhere in same sequence

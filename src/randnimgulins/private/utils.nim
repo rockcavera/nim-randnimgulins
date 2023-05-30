@@ -3,9 +3,11 @@ import std/bitops
 import pkg/nint128
 
 type
-  RngSomeInteger* = SomeUnsignedInt|SomeSignedInt|SomeInt128
+  RngSignedInt* = SomeSignedInt|Int128
+  RngUnsignedInt* = SomeUnsignedInt|UInt128
+  RngSomeInteger* = RngSignedInt|RngUnsignedInt
 
-proc `-`*[T: SomeUnsignedInt](a: T): T {.inline.} =
+func `-`*[T: SomeUnsignedInt](a: T): T {.inline.} =
   ## Operator unary minus
   not(a) + 1
 
@@ -83,5 +85,5 @@ template toSomeIntegerUnsafe*[T: RngSomeInteger](x: RngSomeInteger): T =
     else:
       cast[T](x)
 
-proc bitsByType*(typ: typedesc): int =
+func bitsByType*(typ: typedesc): int =
   result = sizeof(typ) * 8
