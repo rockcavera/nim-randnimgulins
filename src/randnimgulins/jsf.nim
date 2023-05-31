@@ -48,6 +48,8 @@ template initJsfImpl() =
   for i in 1 .. 20:
     discard next(result)
 
+{.push overflowChecks: off, raises: [].}
+
 # Jsf32
 func next*(rng: var Jsf32): uint32 {.inline.} =
   ## Returns the next random `uint32` using the `Jsf32` state.
@@ -65,3 +67,5 @@ func next*(rng: var Jsf64): uint64 {.inline.} =
 func initJsf64*(seed: uint64): Jsf64 =
   ## Initializes a new `Jfc64` state using the provided `seed`.
   initJsfImpl()
+
+{.pop.}

@@ -33,6 +33,8 @@ type
   Wyrand* = object ## State of a random number generator.
     state: uint64
 
+{.push overflowChecks: off, raises: [].}
+
 func next*(rng: var Wyrand): uint64 {.inline.} =
   ## Returns the next random `uint64` using the `Wyrand` state.
   rng.state += 0xa0761d6478bd642f'u64
@@ -69,3 +71,5 @@ func next*(rng: var Wyrand): uint64 {.inline.} =
 func initWyrand*(seed: uint64): Wyrand =
   ## Initializes a new `Wyrand` state using the provided `seed`.
   result.state = seed
+
+{.pop.}
