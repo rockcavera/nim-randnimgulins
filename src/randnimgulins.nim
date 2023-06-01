@@ -174,8 +174,3 @@ func uniformFloat32MulFree*(rng: var Rng32): float32 {.inline.} =
   let n = next(rng)
 
   cast[float32](0x3F800000'u32 or (n shr 9)) - 1.0'f32
-
-when isMainModule:
-  var a = initPcg64(u128(1), u128(2))
-
-  echo pcgBounded(a, 100)
