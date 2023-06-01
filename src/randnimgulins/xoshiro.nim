@@ -31,7 +31,7 @@
 ##
 ## More information: https://prng.di.unimi.it/ or http://vigna.di.unimi.it/ftp/papers/ScrambledLinear.pdf
 
-import ./private/utils
+import ./private/[exporter, utils]
 
 template shiftXorsRotlImpl(shift1, rotl1) =
   let t = rng.state[1] shl shift1
@@ -176,3 +176,13 @@ func initXoshiro256starstar*(seed: varargs[uint64]): Xoshiro256starstar =
 
 func initXoshiro512starstar*(seed: varargs[uint64]): Xoshiro512starstar =
   initImpl(8, -1)
+
+addRng(Xoshiro128plus)
+addRng(Xoshiro128plusplus)
+addRng(Xoshiro128starstar)
+addRng(Xoshiro256plus)
+addRng(Xoshiro256plusplus)
+addRng(Xoshiro256starstar)
+addRng(Xoshiro512plus)
+addRng(Xoshiro512plusplus)
+addRng(Xoshiro512starstar)

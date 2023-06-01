@@ -19,7 +19,7 @@
 ## More information: http://burtleburtle.net/bob/rand/smallprng.html
 ##                   https://www.pcg-random.org/posts/bob-jenkins-small-prng-passes-practrand.html
 
-import ./private/utils
+import ./private/[exporter, utils]
 
 type
   Jsf32* = object ## State of a random number generator.
@@ -69,3 +69,6 @@ func initJsf64*(seed: uint64): Jsf64 =
   initJsfImpl()
 
 {.pop.}
+
+addRng(Jsf32)
+addRng(Jsf64)

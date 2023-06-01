@@ -44,7 +44,7 @@
 
 import pkg/nint128
 
-import ./private/utils
+import ./private/[exporter, utils]
 
 {.push overflowChecks: off, warnings: off, raises: [].}
 
@@ -751,6 +751,8 @@ template pcgConstructor*[I, O: PcgUInts](name: untyped, variant: PcgVariants,
 
       if r >= threshold:
         return r mod upperBound
+
+  addRng(name)
 
 pcgConstructor(Pcg32, PcgSpecificStream, PcgXSH_RR, uint64, uint32)
 pcgConstructor(Pcg32OneSeq, PcgSingleStream, PcgXSH_RR, uint64, uint32)

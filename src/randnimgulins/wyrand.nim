@@ -26,6 +26,8 @@
 
 import pkg/nint128
 
+import ./private/exporter
+
 when defined(wyrand32Bit):
   import ./private/utils
 
@@ -73,3 +75,5 @@ func initWyrand*(seed: uint64): Wyrand =
   result.state = seed
 
 {.pop.}
+
+addRng(Wyrand)
