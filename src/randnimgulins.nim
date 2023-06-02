@@ -1,6 +1,6 @@
 import pkg/nint128
 
-import ./randnimgulins/[jsf, pcg, wyrand, xoshiro]
+import ./randnimgulins/[jsf, pcg, wyrand, xoroshiro, xoshiro]
 
 import ./randnimgulins/private/[exporter, utils]
 
