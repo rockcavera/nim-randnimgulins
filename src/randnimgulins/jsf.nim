@@ -9,8 +9,8 @@
 ## =======  ===================  ===============  =========
 ##  PRNG     State size (bits)    Output (bits)    Period
 ## =======  ===================  ===============  =========
-##  JSF32    128                  32               ~ 2^127
-##  JSF64    256                  64               ~ 2^255
+##  Jsf32    128                  32               ~ 2^127
+##  Jsf64    256                  64               ~ 2^255
 ## =======  ===================  ===============  =========
 ##
 ## The period may vary according to the seed used, as these generators do not
